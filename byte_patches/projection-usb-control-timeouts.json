@@ -1,0 +1,53 @@
+{
+  "_comment": [
+    "Description: Stops stalled Android Auto and CarPlay USB control requests from blocking indefinitely and rejects incomplete CarPlay capability replies.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/iAP2Service",
+      "source": {
+        "bytes": 596948,
+        "sha256": "bc0e0f66ae814a174e12e7e6ef47ddd92dbf2ca1ab54ea1bc2e2e8f4a869d3ca"
+      },
+      "hunks": [
+        {
+          "file_offset": 30060,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        },
+        {
+          "file_offset": 30126,
+          "expected_hex": "8945f08b45ec0fb6000fb6c0",
+          "replacement_hex": "83f80475478b45ec0fb60090"
+        }
+      ]
+    },
+    {
+      "path": "/app/lib/liblinux-head-unit.so",
+      "source": {
+        "bytes": 193380,
+        "sha256": "f75a1048ce42c800e966a001612ea5dafcac50c4975470368f68266118850b56"
+      },
+      "hunks": [
+        {
+          "file_offset": 131692,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        },
+        {
+          "file_offset": 134462,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        },
+        {
+          "file_offset": 134827,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        }
+      ]
+    }
+  ]
+}

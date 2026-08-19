@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Description: Keeps CarPlay USB data transfers intact when the device accepts only part of a packet.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/iAP2Service",
+      "source": {
+        "bytes": 596948,
+        "sha256": "bc0e0f66ae814a174e12e7e6ef47ddd92dbf2ca1ab54ea1bc2e2e8f4a869d3ca"
+      },
+      "hunks": [
+        {
+          "file_offset": 45161,
+          "expected_hex": "8b45ec",
+          "replacement_hex": "8b45e4"
+        },
+        {
+          "file_offset": 45218,
+          "expected_hex": "b8000000008d6424445b5dc3",
+          "replacement_hex": "31c03b45ec19c08b5dfcc9c3"
+        }
+      ]
+    }
+  ]
+}

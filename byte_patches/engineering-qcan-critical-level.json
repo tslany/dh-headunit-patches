@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Description: Makes QCANController CRITICAL persist and report as CRITICAL instead of ASSERT.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/share/AppEngineeringMode/qml/LogSetting/Engineer_LogList1.qml",
+      "source": {
+        "bytes": 25291,
+        "sha256": "9f38f63d4d360e2970d4d30fd3890580dad270f6b3c70fe5d699847d4b092f26"
+      },
+      "hunks": [
+        {
+          "file_offset": 16506,
+          "expected_hex": "30",
+          "replacement_hex": "39"
+        },
+        {
+          "file_offset": 16607,
+          "expected_hex": "30",
+          "replacement_hex": "39"
+        }
+      ]
+    }
+  ]
+}

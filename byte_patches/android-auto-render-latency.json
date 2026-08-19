@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Description: Keeps Android Auto video close to real time by dropping stale decoded frames when rendering falls behind.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/lib/libAAPMediaFramework.so",
+      "source": {
+        "bytes": 86124,
+        "sha256": "5d76448195fcfa466e8c8174bb2c36e637ef04e20171c498868bfe1c5df57b86"
+      },
+      "hunks": [
+        {
+          "file_offset": 69604,
+          "expected_hex": "617070737263206e616d653d67616c736f7572636520636170733d22766964656f2f782d68323634222021204d6978566964656f4465636f646572483236342021207175657565206d61782d73697a652d62797465733d313030303030302021204d6978566964656f53696e6b206e616d653d67616c73696e6b00",
+          "replacement_hex": "617070737263206e616d653d6773726320636170733d22766964656f2f782d68323634222021204d6978566964656f4465636f646572483236342021207175657565206d61782d73697a652d627566666572733d32206c65616b793d322021204d6978566964656f53696e6b206e616d653d67616c73696e6b0000"
+        },
+        {
+          "file_offset": 69827,
+          "expected_hex": "67616c736f7572636500",
+          "replacement_hex": "67737263000000000000"
+        }
+      ]
+    }
+  ]
+}

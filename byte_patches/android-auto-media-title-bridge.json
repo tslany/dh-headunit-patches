@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "Description: Shows the current Android Auto media title on the instrument cluster.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/AppProjection",
+      "source": {
+        "bytes": 1274484,
+        "sha256": "743bfad2bbcfaa03bdc941f84a1105f6f27831cba4bc749d414e6a0da7004e65"
+      },
+      "hunks": [
+        {
+          "file_offset": 641084,
+          "expected_hex": "f4",
+          "replacement_hex": "85"
+        },
+        {
+          "file_offset": 641191,
+          "expected_hex": "0f8e9b000000",
+          "replacement_hex": "e99c00000090"
+        },
+        {
+          "file_offset": 641352,
+          "expected_hex": "8b44245801db8b500883fa020f8ed60400008b0883f9010f84260b000089542404893c24e8c3caf6ff8b4424588b480c885902",
+          "replacement_hex": "83fb207e05bb200000008d5c1b01b703c744240403000000893c24909090909090909090e883cef6ff8b078b400c6689580290"
+        },
+        {
+          "file_offset": 643041,
+          "expected_hex": "8b4424588b500883fa020f8e750100008b0883f9010f84a204000089542404893c24e82cc4f6ff8b4424588b480cc64102028b4424588b500883fa030f8e2e0100008b0883f9010f849704000089542404893c24e8fac3f6ff8b4424588b480cc64103008b4424588b500883fa040f8ee70000008b0883f9010f845104000089542404893c24e8c8c3f6ff8b4424588b480cc6410400e9fff8ffff",
+          "replacement_hex": "c744240405000000893c24eb0731dbe943f7ffff9090909090909090909090909090e8ecc7f6ff8b078b400cc7400203030000e962f9ffff8b4424048b40088b4074837808007405c644240f08e93df3ffff5557565381ec4c0100008b842460010000890424c7442404ffffffffc7442408ffffff6f68ee4f0e08e90ff3ffff909090909090909090909090909090909090909090909090909090"
+        },
+        {
+          "file_offset": 645215,
+          "expected_hex": "e80cebffff",
+          "replacement_hex": "e8b5f7ffff"
+        },
+        {
+          "file_offset": 645435,
+          "expected_hex": "e8a0edffff",
+          "replacement_hex": "e8f3f6ffff"
+        }
+      ]
+    }
+  ]
+}

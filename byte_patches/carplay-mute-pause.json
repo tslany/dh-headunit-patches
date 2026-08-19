@@ -1,0 +1,58 @@
+{
+  "_comment": [
+    "Description: Pauses CarPlay playback when muted and resumes it when unmuted.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/AppProjection",
+      "source": {
+        "bytes": 1274484,
+        "sha256": "743bfad2bbcfaa03bdc941f84a1105f6f27831cba4bc749d414e6a0da7004e65"
+      },
+      "hunks": [
+        {
+          "file_offset": 329468,
+          "expected_hex": "c7442404ffffffffc704242bba130866c78552ffffff20008d9d7cffffffe89594fbffc7442404ffffffffc70424e0c2130889857cffffff66c78550ffffff2000e87294fbffc7442404ffffffffc70424e84b13088d9574ffffff898574ffffff899510ffffffe84c94fbff8d8d78ffffff8d9570ffffff898570ffffffc744240c000000008d8550ffffff8954240489442410890c248d8574ffffff89442408898d0cffffff898510ffffff899514ffffffe820a4fbff8d6424fc8d8552ffffff894424108b850cffffff8d4d80c744240c00000000895c240889442404890c24898d00ffffffe8eba3fbff8d6424fce8128bfbff8b9500ffffffc74424082000000089542404890424e8e891fbff8b8d00ffffff890c24e83615fdff8b850cffffff890424e82815fdff8b9514ffffff891424e81a15fdff8b8d10ffffff890c24e80c15fdff891c24e80415fdff8b45088b900c010000c680e80100000185d20f884cfcffff0504010000890424e8c3a3fbffe93afcffff",
+          "replacement_hex": "c7442404ffffffffc70424248809088d5d80909090909090909090909090e89594fbff894580e9a70000008b75088b960c010000c686e80100000185d2780e8d8604010000890424e8eba4fbffbb18000000eb0f8b7508c686e801000000bb10000000807e74007464893424e8f3e6fdff84c0745883fb1875108b461085c0744c83b8bc0000000175438b460c85c0743c8b402c85c0743589da89c38d7c240431c0b908000000f3ab891c24c7041401000000c744240401000000e8b88cfbffc744240400000000e8ab8cfbffe9e2fcffffe8318bfbffc744240820000000895c2404890424909090909090909090909090909090909090909090909090909090909090909090909090909090909090e8e391fbff891c24909090909090e83115fdffe903ffffff5b504a545d5b7669727475616c20766f69642043436172506c61794374726c3a3a68616e646c6555495374617465436f6d6d6f6e284576656e74295d204556545f524551455553545f4d5554450090909090"
+        },
+        {
+          "file_offset": 337824,
+          "expected_hex": "8b5508c682e801000000e901ddffff",
+          "replacement_hex": "e9abdfffff90909090909090909090"
+        }
+      ]
+    },
+    {
+      "path": "/app/lib/libCarPlayAppFramework.so",
+      "source": {
+        "bytes": 147364,
+        "sha256": "6d1b974ecd68654ce0c9b341b0a1e539affbcaefa75dec80be68e980d8dbabe9"
+      },
+      "hunks": [
+        {
+          "file_offset": 62434,
+          "expected_hex": "02",
+          "replacement_hex": "04"
+        },
+        {
+          "file_offset": 62448,
+          "expected_hex": "04",
+          "replacement_hex": "08"
+        },
+        {
+          "file_offset": 62462,
+          "expected_hex": "08",
+          "replacement_hex": "02"
+        },
+        {
+          "file_offset": 128897,
+          "expected_hex": "050c0901a101050c09b009b509b615002501750195038102750595018101c0",
+          "replacement_hex": "050c0901a10109b009b119b529b615002501750195048102750495018101c0"
+        }
+      ]
+    }
+  ]
+}

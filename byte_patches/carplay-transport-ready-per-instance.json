@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "Description: Keeps each CarPlay transport's readiness independent and limits waits when a transport never becomes ready.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/iAP2Service",
+      "source": {
+        "bytes": 596948,
+        "sha256": "bc0e0f66ae814a174e12e7e6ef47ddd92dbf2ca1ab54ea1bc2e2e8f4a869d3ca"
+      },
+      "hunks": [
+        {
+          "file_offset": 39912,
+          "expected_hex": "c705aca60d0800000000",
+          "replacement_hex": "c6400600909090909090"
+        },
+        {
+          "file_offset": 41102,
+          "expected_hex": "eb38",
+          "replacement_hex": "eb47"
+        },
+        {
+          "file_offset": 41104,
+          "expected_hex": "c7442410b0250b08c744240c80000000",
+          "replacement_hex": "8b45b4fe400680780632733beb1e9090"
+        },
+        {
+          "file_offset": 41160,
+          "expected_hex": "a1aca60d0883f8010f95c084c075b9",
+          "replacement_hex": "8b45b48b0085c074bf909090909090"
+        },
+        {
+          "file_offset": 41877,
+          "expected_hex": "c705aca60d0800000000",
+          "replacement_hex": "90909090909090909090"
+        },
+        {
+          "file_offset": 42153,
+          "expected_hex": "c705aca60d0801000000",
+          "replacement_hex": "90909090909090909090"
+        }
+      ]
+    }
+  ]
+}

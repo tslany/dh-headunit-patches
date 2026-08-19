@@ -1,0 +1,24 @@
+{
+  "_comment": [
+    "Description: Rejects Android Auto touch events containing more than five contacts.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/AppProjection",
+      "source": {
+        "bytes": 1274484,
+        "sha256": "743bfad2bbcfaa03bdc941f84a1105f6f27831cba4bc749d414e6a0da7004e65"
+      },
+      "hunks": [
+        {
+          "file_offset": 584195,
+          "expected_hex": "8b47088b570c29c285d2895424247e9831dbc744242800000000bdffffffff8d74243ceb30",
+          "replacement_hex": "8b47088b570c29c285d27e9c83fa057f978954242431db895c242883cdff8d74243c90eb30"
+        }
+      ]
+    }
+  ]
+}

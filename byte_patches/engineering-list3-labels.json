@@ -1,0 +1,39 @@
+{
+  "_comment": [
+    "Description: Corrects Engineering Log List 3 labels for the AppSettingsBT and AppIBox controls.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/share/AppEngineeringMode/qml/LogSetting/Engineer_LogList3.qml",
+      "source": {
+        "bytes": 20391,
+        "sha256": "13b9d3b141d02964f3ca6900e90e9651e0dc378f90edd265d1e3e2980b7932dc"
+      },
+      "hunks": [
+        {
+          "file_offset": 14745,
+          "expected_hex": "2020202020202020746578743a2071735472282253657474696e67732229",
+          "replacement_hex": "202020746578743a2071735472282241707053657474696e677342542229"
+        },
+        {
+          "file_offset": 15020,
+          "expected_hex": "2020202020202020746578743a207173547228224170705374616e6442792229",
+          "replacement_hex": "2020202020202020746578743a2071735472282241707049426f782229202020"
+        },
+        {
+          "file_offset": 15900,
+          "expected_hex": "202020202020202020202020696443757272656e7441707056616c5f746578742e74657874203d202253657474696e677322",
+          "replacement_hex": "20202020202020696443757272656e7441707056616c5f746578742e74657874203d202241707053657474696e6773425422"
+        },
+        {
+          "file_offset": 16891,
+          "expected_hex": "202020202020202020202020696443757272656e7441707056616c5f746578742e74657874203d202269426f7822",
+          "replacement_hex": "202020202020202020696443757272656e7441707056616c5f746578742e74657874203d202241707049426f7822"
+        }
+      ]
+    }
+  ]
+}

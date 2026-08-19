@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "Description: Prevents completed CarPlay USB role switches from being misreported as timeouts and limits stalled switch attempts.",
+    "Tested on: 2017_Genesis_G80_EU (DHPE.EUR.SOP.03.013.20230825)."
+  ],
+  "schema": "dh-headunit-application-patch/v2",
+  "revision": 1,
+  "targets": [
+    {
+      "path": "/app/bin/iAP2Service",
+      "source": {
+        "bytes": 596948,
+        "sha256": "bc0e0f66ae814a174e12e7e6ef47ddd92dbf2ca1ab54ea1bc2e2e8f4a869d3ca"
+      },
+      "hunks": [
+        {
+          "file_offset": 29489,
+          "expected_hex": "c645df00c745e001000000c7442410b2190b08c744240c2c020000c744240800120b08c744240430120b08c7042414000000e84adfffff",
+          "replacement_hex": "e858ae00008945e48d5030891424e8e0baffff8b45e4c6404800c7404cffffff7f8d4030890424e897b8ffffc645df00c745e001000000"
+        },
+        {
+          "file_offset": 29566,
+          "expected_hex": "83c005",
+          "replacement_hex": "83c00a"
+        },
+        {
+          "file_offset": 29642,
+          "expected_hex": "8b45e483c030890424e84cbaffff8b45e4c64048008b45e489c183c1308b45e48d55f089542408894c2404890424e8b7b5ffff8b45e40fb640488845df8b45e48b404c8945e0",
+          "replacement_hex": "8b75e48d4630890424e84cbaffff817e4cffffff7f75258d45f0894424088d463089442404893424e8bdb5ffff817e4cffffff7f750685c074d4eb0a8b464c8945e090909090"
+        },
+        {
+          "file_offset": 39096,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        },
+        {
+          "file_offset": 39212,
+          "expected_hex": "c744241c00000000",
+          "replacement_hex": "c744241c88130000"
+        }
+      ]
+    }
+  ]
+}
